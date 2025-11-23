@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +22,41 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .nav {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        /* Uncomment this when you add logo image */
+        /* .logo img {
+            height: 40px;
+            width: auto;
+        } */
+        
+        .nav-signin {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 20px;
+            border: 1px solid #FFFFFF;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-signin:hover {
+            background-color: #FFFFFF;
+            color: #0A1E3C;
         }
         
         /* Hero Section */
@@ -154,14 +188,24 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <div class="logo">
+            JetSet Dead Legs
+            <!-- When you find the logo image, replace the text above with: -->
+            <!-- <img src="path-to-your-logo.png" alt="JetSet Dead Legs"> -->
+        </div>
+        <a href="https://app.jetsetdeadlegs.com" class="nav-signin">Sign In</a>
+    </nav>
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>The smart way to fly private</h1>
             <p>AI-powered empty-leg discovery. Connect with verified operators for empty-leg flights at up to 60% off standard charter prices.</p>
             <div class="buttons">
-                <a href="#" class="button button-primary">Create Route Alert</a>
-                <a href="#" class="button button-secondary">For Operators</a>
+                <a href="https://app.jetsetdeadlegs.com" class="button button-primary">Get Started</a>
+                <a href="https://app.jetsetdeadlegs.com" class="button button-secondary">For Operators</a>
             </div>
             <p class="trust-line">Covering UK, Europe & US routes • AOC-verified operators only</p>
         </div>
