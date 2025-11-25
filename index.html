@@ -1,270 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JetSet Dead Legs — The Smart Way to Fly Private</title>
-    <meta name="description" content="AI-powered empty-leg discovery. Connect with verified operators for empty-leg flights at up to 60% off standard charter prices.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JetSet Dead Legs - Luxury Private Jet Flights for Less</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#D4AF37',
+              'brand-charcoal': '#1F2937',
+              'brand-night': '#111827',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+          }
+        }
+      }
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background-color: #0A1E3C;
-            color: #FFFFFF;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 100px 20px 80px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
-        
-        .buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        
-        .button {
-            display: inline-block;
-            padding: 14px 32px;
-            font-size: 1rem;
-            font-weight: 500;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.2s;
-        }
-        
-        .button-primary {
-            background-color: #FFFFFF;
-            color: #0A1E3C;
-        }
-        
-        .button-primary:hover {
-            background-color: #f0f0f0;
-            transform: translateY(-2px);
-        }
-        
-        .button-secondary {
-            background-color: transparent;
-            color: #FFFFFF;
-            border: 2px solid #FFFFFF;
-        }
-        
-        .button-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .trust-line {
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .about h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-        
-        .about p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 20px;
-            opacity: 0.9;
-        }
-        
-        .about a {
-            color: #FFFFFF;
-            text-decoration: underline;
-        }
-        
-        .about a:hover {
-            opacity: 0.8;
-        }
-        
-        /* Trust Badges */
-        .trust-badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 40px 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .trust-badge {
-            text-align: center;
-            opacity: 0.8;
-        }
-        
-        .trust-badge-icon {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
-        
-        .trust-badge-text {
-            font-size: 0.9rem;
-        }
-        
-        /* Footer */
-        .footer {
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-        
-        .footer p {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links {
-            margin-top: 20px;
-        }
-        
-        .footer-links a {
-            color: #FFFFFF;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .legal-disclaimer {
-            margin-top: 30px;
-            font-size: 0.75rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.6;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .button {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .trust-badges {
-                gap: 20px;
-            }
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
     </style>
 </head>
-<body>
+<body class="bg-brand-night text-white">
+
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>The smart way to fly private</h1>
-            <p>AI-powered empty-leg discovery. Connect with verified operators for empty-leg flights at up to 60% off standard charter prices.</p>
-            <div class="buttons">
-                <a href="https://app.jetsetdeadlegs.com" class="button button-primary">Create Route Alert</a>
-                <a href="https://app.jetsetdeadlegs.com/operator" class="button button-secondary">For Operators</a>
+    <div class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div 
+            class="absolute inset-0 h-full bg-cover bg-center" 
+            style="background-image: url('https://picsum.photos/seed/privatejet/1920/1080');">
+        </div>
+        <div class="absolute inset-0 bg-brand-night/70 backdrop-blur-sm"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-night via-brand-night/50 to-transparent"></div>
+
+        <div class="relative z-10">
+            <header class="mb-8 animate-fade-in-up" style="animation-delay: 100ms;">
+                <div class="flex justify-center items-center gap-4 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8)">
+                        JetSet Dead Legs
+                    </h1>
+                </div>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8)">
+                    The Smart Way to Fly Private.
+                </p>
+            </header>
+
+            <div class="animate-fade-in-up" style="animation-delay: 300ms;">
+                <a href="/index.html" class="inline-block bg-brand-gold text-brand-night font-bold text-lg rounded-lg px-8 py-4 hover:bg-yellow-500 transition-all duration-300 shadow-lg shadow-brand-gold/20 transform hover:scale-105">
+                    Launch the App & Find Flights
+                </a>
             </div>
-            <p class="trust-line">✓ AOC-verified operators only • ✓ Secure payment • ✓ UK, Europe & US routes</p>
         </div>
-    </section>
-    
-    <!-- Trust Badges Section -->
-    <section class="trust-badges">
-        <div class="trust-badge">
-            <div class="trust-badge-icon">✓</div>
-            <div class="trust-badge-text">AOC-verified<br>operators only</div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="bg-brand-night py-20 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Fly Private, Pay Less. It's That Simple.</h2>
+                <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">An "empty leg" or "dead leg" is a one-way private jet flight that would otherwise have no passengers. We give you access to these flights, offering an unparalleled luxury experience for a fraction of the typical charter price.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <!-- Step 1 -->
+                <div class="animate-fade-in-up" style="animation-delay: 500ms;">
+                    <div class="flex items-center justify-center h-20 w-20 bg-brand-charcoal border-2 border-brand-gold/30 rounded-full mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">1. Search Your Route</h3>
+                    <p class="text-gray-400">Enter your desired origin and destination to instantly see available empty leg flights.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="animate-fade-in-up" style="animation-delay: 700ms;">
+                    <div class="flex items-center justify-center h-20 w-20 bg-brand-charcoal border-2 border-brand-gold/30 rounded-full mx-auto mb-4">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-12v.75m0 3v.75m0 3v.75m0 3V18m-3-12h18M3 12h18m-3 6h-12c-.621 0-1.125-.504-1.125-1.125V6.125c0-.621.504-1.125 1.125-1.125h12.75c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125Z" />
+                       </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">2. View Details & Book</h3>
+                    <p class="text-gray-400">Explore aircraft details, pricing, and availability. Contact the operator directly to book or make an offer.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="animate-fade-in-up" style="animation-delay: 900ms;">
+                    <div class="flex items-center justify-center h-20 w-20 bg-brand-charcoal border-2 border-brand-gold/30 rounded-full mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.125A59.769 59.769 0 0121.485 12 59.768 59.768 0 013.27 20.875L5.999 12zm0 0h7.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">3. Enjoy Your Flight</h3>
+                    <p class="text-gray-400">Experience the luxury, comfort, and convenience of private jet travel at an unbeatable price.</p>
+                </div>
+            </div>
         </div>
-        <div class="trust-badge">
-            <div class="trust-badge-icon">🔒</div>
-            <div class="trust-badge-text">Secure payment<br>processing</div>
-        </div>
-        <div class="trust-badge">
-            <div class="trust-badge-icon">🛡️</div>
-            <div class="trust-badge-text">GDPR<br>compliant</div>
-        </div>
-        <div class="trust-badge">
-            <div class="trust-badge-icon">🇬🇧</div>
-            <div class="trust-badge-text">UK-based<br>company</div>
-        </div>
-        <div class="trust-badge">
-            <div class="trust-badge-icon">⏰</div>
-            <div class="trust-badge-text">24/7 platform<br>support</div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <h2>JetSet Dead Legs — Private Beta</h2>
-            <p>We're a technology platform connecting travelers with licensed aircraft operators for empty legs, ferry flights, and private charters.</p>
-            <p>Private Beta launching December 2025.</p>
-            <p>Contact: <a href="mailto:roland@jetsetdeadlegs.com">roland@jetsetdeadlegs.com</a></p>
-        </div>
-    </section>
-    
+    </div>
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 JetSet Dead Legs. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://app.jetsetdeadlegs.com/privacy">Privacy Policy</a>
-                <a href="https://app.jetsetdeadlegs.com/terms">Terms of Service</a>
-                <a href="mailto:roland@jetsetdeadlegs.com">Contact</a>
-            </div>
-            <p class="legal-disclaimer">
-                <strong>Legal disclaimer:</strong> JetSet Dead Legs is a technology platform connecting travellers with licensed third-party aircraft operators. We are not a direct air carrier, charter operator, or licensed broker. All flights are operated by independent, AOC-certified operators.
-            </p>
+    <footer class="bg-brand-charcoal py-8 px-4">
+        <div class="container mx-auto text-center text-gray-500">
+            <p>&copy; 2024 JetSet Dead Legs. All Rights Reserved.</p>
+            <p class="text-sm mt-2">The future of luxury travel is here.</p>
         </div>
     </footer>
+
 </body>
 </html>
