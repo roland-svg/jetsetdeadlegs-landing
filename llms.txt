@@ -1,0 +1,19 @@
+# JetSet Dead Legs
+
+JetSet Dead Legs is a platform connecting savvy travelers with private aircraft charter operators for luxury travel at a fraction of the cost.
+
+## Core Features
+- **For Travelers**: Find and book "empty leg" flights (repositioning flights) at significantly reduced rates (often 50-75% off).
+- **For Operators**: Monetize empty flights that would otherwise fly without passengers.
+- **Route Alerts**: Users can set up alerts for specific routes to be notified when a matching empty leg becomes available.
+
+## Key Pages
+- Home: http://jetsetdeadlegs.com/
+- How It Works: http://jetsetdeadlegs.com/how-it-works.html
+- For Travelers: http://jetsetdeadlegs.com/for-travelers.html
+- For Operators: http://jetsetdeadlegs.com/for-operators.html
+- Blog: http://jetsetdeadlegs.com/blog.html
+- Contact: http://jetsetdeadlegs.com/contact.html
+
+## Mission
+To democratize private aviation by making use of the 30-50% of private jets that fly empty, creating a win-win for operators and travelers.
