@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: http://jetsetdeadlegs.com/sitemap.xml
