@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Understanding empty legs in private aviation - why they exist, how they work, and how JetSet Dead Legs connects travellers with operators to turn waste into opportunity." />
+    <title>Understanding Empty Legs: The Hidden Opportunity in Private Aviation | JetSet Dead Legs</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#D4AF37',
+              'brand-charcoal': '#1F2937',
+              'brand-night': '#111827',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-brand-night text-white">
+    
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-night/30 backdrop-blur-sm border-b border-white/5">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform -rotate-90 group-hover:rotate-12 transition-transform">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+                <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Home</a>
+                <a href="how-it-works.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">How It Works</a>
+                <a href="for-travelers.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Travellers</a>
+                <a href="for-operators.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Operators</a>
+                <a href="blog.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold transition-all">Blog</a>
+                <a href="news.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">News</a>
+                <a href="about.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">About</a>
+                <a href="contact.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="hidden sm:inline-block bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-xs uppercase tracking-widest">
+                    Launch App
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-charcoal border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-gray-300 hover:text-brand-gold transition-colors">How It Works</a>
+                <a href="for-travelers.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Travellers</a>
+                <a href="for-operators.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="blog.html" class="text-brand-gold">Blog</a>
+                <a href="news.html" class="text-gray-300 hover:text-brand-gold transition-colors">News</a>
+                <a href="about.html" class="text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-center">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="relative min-h-[40vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div 
+            class="absolute inset-0 h-full bg-cover bg-center" 
+            style="background-image: url('https://picsum.photos/seed/emptyleg/1920/1080');">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-night/0 via-brand-night/60 to-brand-night backdrop-blur-[1px]"></div>
+
+        <div class="relative z-10 max-w-4xl">
+            <div class="mb-6">
+                <a href="blog.html" class="inline-flex items-center text-brand-gold hover:text-yellow-500 transition-colors duration-300 font-bold uppercase tracking-widest text-xs">
+                    ← Back to Ideas & Insights
+                </a>
+            </div>
+            
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold bg-brand-gold/20 px-3 py-1 rounded-full">Explainer</span>
+                <span class="text-xs text-gray-400">Jan 2, 2026</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6" style="text-shadow: 2px 2px 12px rgba(0,0,0,0.8)">
+                Understanding Empty Legs: <span class="text-brand-gold">The Hidden Opportunity</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <article class="prose prose-lg prose-invert max-w-none">
+                
+                <div class="mb-8">
+                    <p class="text-xl text-gray-300 leading-relaxed">
+                        Every repositioning flight is a potential empty leg. For operators, they represent cost. For travellers, they represent opportunity. Here's how our platform turns this inefficiency into value for both sides.
+                    </p>
+                </div>
+
+                <div class="space-y-8 text-gray-300">
+                    
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">What exactly is an empty leg?</h2>
+                        <p class="mb-4">An empty leg occurs when a private aircraft flies without passengers. This happens more often than you might think. When a charter operator flies passengers from London to Nice, that aircraft needs to return to its home base or reposition for the next charter. Unless there's a passenger booked for that return journey, the aircraft flies empty.</p>
+                        <p class="mb-4">These repositioning flights represent pure cost for operators—fuel, crew time, aircraft hours, landing fees—with no offsetting revenue. For the private aviation industry as a whole, empty legs account for an estimated 40% of all flight hours.</p>
+                        <p>That's a significant inefficiency in a sector that prides itself on precision and optimisation.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Why do empty legs exist?</h2>
+                        <p class="mb-4">Empty legs are an inherent part of private aviation logistics. Unlike commercial airlines with fixed routes and schedules, private aircraft follow demand wherever it leads them. A jet might fly business executives from Farnborough to Geneva on Monday, then ferry to Palma to collect a family for their return to London on Wednesday.</p>
+                        <p class="mb-4">Traditional charter brokers have struggled to monetise these flights effectively. The manual process of identifying, pricing, and marketing empty legs to potential travellers is time-consuming and often unprofitable at traditional broker margins of 10–15%.</p>
+                        <p>This is precisely the problem that AI-powered platforms can solve.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">The opportunity for travellers</h2>
+                        <p class="mb-4">Empty legs offer travellers access to private aviation at a fraction of the normal cost. Instead of paying £15,000 for a charter from London to Nice, you might find an empty leg on the same route for £4,000–6,000. The aircraft, service level, and experience remain exactly the same.</p>
+                        <p class="mb-4">The trade-off is flexibility. Empty legs operate on the operator's schedule, not yours. They're ideal for leisure travellers who can be flexible with timing, or business travellers who need to reach specific destinations and can adapt their schedules accordingly.</p>
+                        <p>Popular UK–EU leisure and business corridors like London–Palma, Farnborough–Nice, Biggin Hill–Geneva, and Luton–Olbia see regular empty leg opportunities, particularly during seasonal peaks.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">The challenge for operators</h2>
+                        <p class="mb-4">For operators, empty legs present both opportunity and challenge. While any revenue is better than flying empty, the process of finding, pricing, and booking travellers for repositioning flights has traditionally been cumbersome and expensive.</p>
+                        <p class="mb-4">Many operators simply accept empty legs as a cost of business rather than invest in the systems and processes needed to monetise them effectively. This is understandable—their core focus is on charter operations, not marketplace management.</p>
+                        <p>AOC-verified operators who can streamline empty leg publishing while maintaining operational control stand to improve their yield significantly.</p>
+                    </div>
+
+                    <div class="bg-brand-charcoal/50 p-8 rounded-xl border border-gray-700">
+                        <h2 class="text-2xl font-bold text-white mb-4">How JetSet Dead Legs changes the equation</h2>
+                        <p class="mb-4">Our platform addresses the core inefficiencies in the empty leg market through AI-powered logistics and automated marketplace mechanics.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">For operators:</h3>
+                                <ul class="list-disc pl-6 space-y-1 text-sm text-gray-300">
+                                    <li>Automated empty leg publishing with AI pricing suggestions</li>
+                                    <li>Commission rates of just 3–5% (vs traditional 10–15%)</li>
+                                    <li>Secure payments through Stripe Connect with 24–48 hour payouts</li>
+                                    <li>Full operational control—you set availability, pricing, and terms</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">For travellers:</h3>
+                                <ul class="list-disc pl-6 space-y-1 text-sm text-gray-300">
+                                    <li>Access to verified empty legs from AOC-certified operators</li>
+                                    <li>Transparent pricing with no hidden broker mark-ups</li>
+                                    <li>AI-powered matching for relevant routes and timing</li>
+                                    <li>Secure booking with escrow protection</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p class="mt-6 text-sm text-gray-400">
+                            <strong>Important:</strong> JetSet Dead Legs is a technology platform that connects travellers with operators. We are not a charter broker or aircraft operator, and we do not operate aircraft or employ pilots.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">The path ahead</h2>
+                        <p class="mb-4">We're currently in private beta with selected AOC-verified operators across the UK and Europe. Our goal is to onboard 15–18 quality operators within 60 days, reach 50+ monthly empty leg listings, and prove a 15–20% fill rate on those opportunities.</p>
+                        <p class="mb-4">This controlled approach allows us to validate our pricing models, refine our matching algorithms, and ensure platform stability before scaling.</p>
+                        <p>Empty legs represent one of private aviation's largest inefficiencies. By connecting the dots between available capacity and flexible travellers, we can turn waste into value for everyone involved.</p>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-night border-t border-white/5 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform -rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                    <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+                </div>
+                <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-500">
+                    <a href="about.html" class="hover:text-brand-gold transition-colors">About</a>
+                    <a href="contact.html" class="hover:text-brand-gold transition-colors">Contact</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Terms</a>
+                </div>
+                <div class="text-gray-600 text-xs">
+                    &copy; 2026 JetSet Dead Legs. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

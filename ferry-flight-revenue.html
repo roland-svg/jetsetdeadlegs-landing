@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="How operators can transform repositioning flights from operational costs into revenue opportunities through professional empty leg management." />
+    <title>From Ferry Flight to Revenue Flight | JetSet Dead Legs</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#D4AF37',
+              'brand-charcoal': '#1F2937',
+              'brand-night': '#111827',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-brand-night text-white">
+    
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-night/30 backdrop-blur-sm border-b border-white/5">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform -rotate-90 group-hover:rotate-12 transition-transform">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+                <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Home</a>
+                <a href="how-it-works.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">How It Works</a>
+                <a href="for-travelers.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Travellers</a>
+                <a href="for-operators.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Operators</a>
+                <a href="blog.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold transition-all">Blog</a>
+                <a href="news.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">News</a>
+                <a href="about.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">About</a>
+                <a href="contact.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="hidden sm:inline-block bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-xs uppercase tracking-widest">
+                    Launch App
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-charcoal border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-gray-300 hover:text-brand-gold transition-colors">How It Works</a>
+                <a href="for-travelers.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Travellers</a>
+                <a href="for-operators.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="blog.html" class="text-brand-gold">Blog</a>
+                <a href="news.html" class="text-gray-300 hover:text-brand-gold transition-colors">News</a>
+                <a href="about.html" class="text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-center">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="relative min-h-[40vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div 
+            class="absolute inset-0 h-full bg-cover bg-center" 
+            style="background-image: url('https://picsum.photos/seed/operators/1920/1080');">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-night/0 via-brand-night/60 to-brand-night backdrop-blur-[1px]"></div>
+
+        <div class="relative z-10 max-w-4xl">
+            <div class="mb-6">
+                <a href="blog.html" class="inline-flex items-center text-brand-gold hover:text-yellow-500 transition-colors duration-300 font-bold uppercase tracking-widest text-xs">
+                    ← Back to Ideas & Insights
+                </a>
+            </div>
+            
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold bg-brand-gold/20 px-3 py-1 rounded-full">For Operators</span>
+                <span class="text-xs text-gray-400">Dec 30, 2025</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6" style="text-shadow: 2px 2px 12px rgba(0,0,0,0.8)">
+                From Ferry Flight to <span class="text-brand-gold">Revenue Flight</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <article class="prose prose-lg prose-invert max-w-none">
+                
+                <div class="mb-8">
+                    <p class="text-xl text-gray-300 leading-relaxed">
+                        Every repositioning flight represents untapped revenue potential. Here's how operators can systematically convert ferry flights from operational costs into profit centres through professional empty leg management.
+                    </p>
+                </div>
+
+                <div class="space-y-8 text-gray-300">
+                    
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">The hidden cost of ferry flights</h2>
+                        <p class="mb-4">Most charter operators view repositioning flights as an unavoidable cost of business. Aircraft need to be in position for client charters, which often requires flying empty legs to reach pickup points or return to base.</p>
+                        
+                        <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700 mb-6">
+                            <h3 class="text-lg font-semibold text-brand-gold mb-3">The typical ferry flight economics:</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between"><span>Direct operating costs</span><span class="text-brand-gold">£2,800 (Light jet, 90 minutes)</span></div>
+                                <div class="flex justify-between"><span>Crew positioning/accommodation</span><span class="text-brand-gold">£400–800</span></div>
+                                <div class="flex justify-between"><span>Airport fees and handling</span><span class="text-brand-gold">£200–600</span></div>
+                                <div class="flex justify-between"><span>Opportunity cost</span><span class="text-brand-gold">Immeasurable</span></div>
+                                <div class="flex justify-between border-t border-gray-600 pt-2 font-semibold"><span>Total cost per empty leg</span><span class="text-brand-gold">£3,400–4,200+</span></div>
+                            </div>
+                        </div>
+
+                        <p class="mb-4">For a busy charter operator conducting 50+ positioning flights monthly, this represents £170,000–210,000 in annual costs that could potentially be offset through strategic empty leg sales.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Why most empty legs go unsold</h2>
+                        <p class="mb-4">The challenge isn't lack of demand—it's the operational complexity of marketing empty legs effectively while managing core charter operations.</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700">
+                                <h3 class="text-lg font-semibold text-brand-gold mb-3">Operational challenges</h3>
+                                <ul class="text-sm space-y-2">
+                                    <li>• Last-minute flight schedule changes</li>
+                                    <li>• No dedicated empty leg marketing resource</li>
+                                    <li>• Manual enquiry handling consumes staff time</li>
+                                    <li>• Difficulty with dynamic pricing decisions</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700">
+                                <h3 class="text-lg font-semibold text-brand-gold mb-3">Market challenges</h3>
+                                <ul class="text-sm space-y-2">
+                                    <li>• Limited visibility beyond existing client base</li>
+                                    <li>• Competing with established brokers</li>
+                                    <li>• Trust and safety concerns from new customers</li>
+                                    <li>• Payment and verification complexity</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Building a systematic approach</h2>
+                        <p class="mb-4">The most successful operators treat empty leg sales as a core business process, not an afterthought. This requires systems, procedures, and dedicated attention—exactly what JetSet Dead Legs provides.</p>
+
+                        <div class="space-y-6">
+                            <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700">
+                                <h3 class="text-lg font-semibold text-brand-gold mb-4">Step 1: Advanced schedule planning</h3>
+                                <p class="text-sm text-gray-300 mb-3">Identify repositioning flights 7+ days in advance whenever possible. This allows time for proper marketing and increases booking probability.</p>
+                                <div class="text-xs text-gray-400 bg-gray-800 p-3 rounded">
+                                    <strong>Best practice:</strong> When confirming client charters, immediately assess return positioning requirements and list quality empty legs (good routes, reasonable notice periods) on the platform.
+                                </div>
+                            </div>
+
+                            <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700">
+                                <h3 class="text-lg font-semibold text-brand-gold mb-4">Step 2: AI-assisted pricing</h3>
+                                <p class="text-sm text-gray-300 mb-3">Use data-driven pricing suggestions that consider route popularity, seasonal demand, and competitive factors rather than arbitrary percentages of full charter rates.</p>
+                                <div class="text-xs text-gray-400 bg-gray-800 p-3 rounded">
+                                    <strong>Success metric:</strong> Target 60-70% of direct operating costs as minimum acceptable revenue, but optimise for higher returns on popular routes.
+                                </div>
+                            </div>
+
+                            <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700">
+                                <h3 class="text-lg font-semibold text-brand-gold mb-4">Step 3: Professional marketing</h3>
+                                <p class="text-sm text-gray-300 mb-3">Leverage platform reach rather than relying on internal client lists. Most empty leg opportunities come from new customers, not existing charter clients.</p>
+                                <div class="text-xs text-gray-400 bg-gray-800 p-3 rounded">
+                                    <strong>Platform advantage:</strong> Access to verified travellers actively searching for empty leg opportunities, with established trust and payment processes.
+                                </div>
+                            </div>
+
+                            <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700">
+                                <h3 class="text-lg font-semibold text-brand-gold mb-4">Step 4: Streamlined operations</h3>
+                                <p class="text-sm text-gray-300 mb-3">Minimise operational overhead through automated enquiry handling, verified customer base, and streamlined booking processes.</p>
+                                <div class="text-xs text-gray-400 bg-gray-800 p-3 rounded">
+                                    <strong>Time saving:</strong> No need to verify customer credentials, process payments, or manage complex enquiry workflows—platform handles these functions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Real operator results</h2>
+                        <p class="mb-4">Operators currently in our private beta are seeing measurable improvements in empty leg monetisation through systematic approach and platform leverage.</p>
+
+                        <div class="grid md:grid-cols-3 gap-6 mb-6">
+                            <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700 text-center">
+                                <div class="text-2xl font-bold text-brand-gold mb-2">18%</div>
+                                <div class="text-sm text-gray-400">Average fill rate on listed empty legs</div>
+                            </div>
+                            
+                            <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700 text-center">
+                                <div class="text-2xl font-bold text-brand-gold mb-2">£1,800</div>
+                                <div class="text-sm text-gray-400">Average revenue per sold empty leg</div>
+                            </div>
+                            
+                            <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700 text-center">
+                                <div class="text-2xl font-bold text-brand-gold mb-2">3–5%</div>
+                                <div class="text-sm text-gray-400">Platform commission vs 10–15% broker fees</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700">
+                            <h3 class="text-lg font-semibold text-brand-gold mb-3">Case study: Mid-size European operator</h3>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between"><span>Monthly positioning flights</span><span class="text-brand-gold">38 flights</span></div>
+                                <div class="flex justify-between"><span>Empty legs listed on platform</span><span class="text-brand-gold">28 flights (74%)</span></div>
+                                <div class="flex justify-between"><span>Successfully sold</span><span class="text-brand-gold">5 flights (18%)</span></div>
+                                <div class="flex justify-between"><span>Monthly additional revenue</span><span class="text-brand-gold">£9,200</span></div>
+                                <div class="flex justify-between"><span>Annual revenue potential</span><span class="text-brand-gold">£110,400</span></div>
+                                <div class="flex justify-between border-t border-gray-600 pt-3 font-semibold"><span>Cost offset vs pure ferry flights</span><span class="text-brand-gold">~73%</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">The compounding benefits</h2>
+                        <p class="mb-4">Beyond direct revenue, professional empty leg management creates additional business value that compounds over time.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">Customer acquisition</h3>
+                                <p class="text-sm text-gray-300">Empty leg passengers often become regular charter clients. A £1,800 empty leg sale might lead to £15,000+ in annual charter revenue from the same customer.</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">Operational efficiency</h3>
+                                <p class="text-sm text-gray-300">Predictable empty leg revenue allows better financial planning and potentially influences route planning to favour higher-demand empty leg opportunities.</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">Brand visibility</h3>
+                                <p class="text-sm text-gray-300">Platform presence and positive customer experiences enhance operator reputation in the broader private aviation market.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-charcoal/50 p-8 rounded-xl border border-gray-700">
+                        <h2 class="text-2xl font-bold text-white mb-4">Getting started with systematic empty leg management</h2>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">1. Audit your current positioning flights</h3>
+                                <p class="text-sm text-gray-300 mb-2">Track all repositioning flights for a month, including routes, timing, and current costs. Identify patterns and high-potential empty legs.</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">2. Establish internal processes</h3>
+                                <p class="text-sm text-gray-300 mb-2">Create procedures for early empty leg identification, pricing approval workflows, and customer communication standards.</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">3. Leverage platform capabilities</h3>
+                                <p class="text-sm text-gray-300 mb-2">Focus internal resources on operations and customer service while letting the platform handle marketing, verification, and payment processing.</p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">4. Monitor and optimise</h3>
+                                <p class="text-sm text-gray-300">Track fill rates, revenue per flight, and customer feedback to continuously improve empty leg performance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-4 bg-brand-night/50 rounded border-l-4 border-brand-gold">
+                            <p class="text-sm text-gray-300"><strong>Ready to transform your positioning flights?</strong> Join our private beta programme and start turning ferry flights into revenue opportunities. Visit our <a href="for-operators.html" class="text-brand-gold hover:underline">For Operators</a> page to learn more about our AOC verification process and commission structure.</p>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-700 pt-6">
+                        <p class="text-sm text-gray-400">
+                            <strong>For operators:</strong> This analysis is based on real data from our private beta programme. Individual results may vary based on route mix, aircraft type, and operational procedures.
+                        </p>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-night border-t border-white/5 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform -rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                    <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+                </div>
+                <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-500">
+                    <a href="about.html" class="hover:text-brand-gold transition-colors">About</a>
+                    <a href="contact.html" class="hover:text-brand-gold transition-colors">Contact</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Terms</a>
+                </div>
+                <div class="text-gray-600 text-xs">
+                    &copy; 2026 JetSet Dead Legs. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

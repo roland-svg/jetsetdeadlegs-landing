@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="How AI pricing algorithms help operators set optimal empty leg prices and travellers discover relevant opportunities. Building in public insights from JetSet Dead Legs." />
+    <title>Why AI Matters for Empty Leg Pricing | JetSet Dead Legs</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#D4AF37',
+              'brand-charcoal': '#1F2937',
+              'brand-night': '#111827',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-brand-night text-white">
+    
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-night/30 backdrop-blur-sm border-b border-white/5">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform -rotate-90 group-hover:rotate-12 transition-transform">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+                <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Home</a>
+                <a href="how-it-works.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">How It Works</a>
+                <a href="for-travelers.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Travellers</a>
+                <a href="for-operators.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Operators</a>
+                <a href="blog.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold transition-all">Blog</a>
+                <a href="news.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">News</a>
+                <a href="about.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">About</a>
+                <a href="contact.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="hidden sm:inline-block bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-xs uppercase tracking-widest">
+                    Launch App
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-charcoal border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-gray-300 hover:text-brand-gold transition-colors">How It Works</a>
+                <a href="for-travelers.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Travellers</a>
+                <a href="for-operators.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="blog.html" class="text-brand-gold">Blog</a>
+                <a href="news.html" class="text-gray-300 hover:text-brand-gold transition-colors">News</a>
+                <a href="about.html" class="text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-center">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="relative min-h-[40vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div 
+            class="absolute inset-0 h-full bg-cover bg-center" 
+            style="background-image: url('https://picsum.photos/seed/platform/1920/1080');">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-night/0 via-brand-night/60 to-brand-night backdrop-blur-[1px]"></div>
+
+        <div class="relative z-10 max-w-4xl">
+            <div class="mb-6">
+                <a href="blog.html" class="inline-flex items-center text-brand-gold hover:text-yellow-500 transition-colors duration-300 font-bold uppercase tracking-widest text-xs">
+                    ← Back to Ideas & Insights
+                </a>
+            </div>
+            
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold bg-brand-gold/20 px-3 py-1 rounded-full">Building in Public</span>
+                <span class="text-xs text-gray-400">Dec 28, 2025</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6" style="text-shadow: 2px 2px 12px rgba(0,0,0,0.8)">
+                Why AI Matters for <span class="text-brand-gold">Empty Leg Pricing</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <article class="prose prose-lg prose-invert max-w-none">
+                
+                <div class="mb-8">
+                    <p class="text-xl text-gray-300 leading-relaxed">
+                        Traditional empty leg pricing is often guesswork. Our AI analyses route demand, seasonality, and operator preferences to suggest optimal pricing that benefits both operators and travellers.
+                    </p>
+                </div>
+
+                <div class="space-y-8 text-gray-300">
+                    
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">The current state of empty leg pricing</h2>
+                        <p class="mb-4">Most operators price empty legs using simple rules of thumb: "Charge 60% of the full charter rate" or "Cover direct costs plus a small margin." This approach ignores market dynamics, seasonal demand, and route-specific factors that significantly impact bookability.</p>
+                        <p class="mb-4">The result? Empty legs that are either priced too high (and remain unsold) or too low (leaving money on the table). Both outcomes are suboptimal for operators trying to maximise yield on otherwise wasted capacity.</p>
+                        <p>Meanwhile, travellers struggle to find fairly priced opportunities because there's no transparent, data-driven market for empty legs.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">What our AI pricing system considers</h2>
+                        <p class="mb-4">Our algorithms analyse multiple data points to suggest pricing that optimises for bookability while maximising operator revenue:</p>
+                        
+                        <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700 mb-6">
+                            <h3 class="text-lg font-semibold text-brand-gold mb-4">Route-specific factors</h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                                <li><strong>Historical demand:</strong> How often do travellers search for this specific route?</li>
+                                <li><strong>Seasonal patterns:</strong> London–Palma commands premium pricing in summer, different dynamics in winter</li>
+                                <li><strong>Competitive landscape:</strong> What alternatives exist via commercial aviation or other operators?</li>
+                                <li><strong>Timing sensitivity:</strong> Business routes (like London–Geneva) vs leisure routes (like Farnborough–Nice)</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700 mb-6">
+                            <h3 class="text-lg font-semibold text-brand-gold mb-4">Operational factors</h3>
+                            <ul class="list-disc pl-6 space-y-2 text-gray-300">
+                                <li><strong>Notice period:</strong> Empty legs published with longer notice generally command higher prices</li>
+                                <li><strong>Aircraft type:</strong> A Cessna Citation vs a Gulfstream G650 have very different market positions</li>
+                                <li><strong>Departure flexibility:</strong> Fixed departure times vs windows affect pricing power</li>
+                                <li><strong>Operator preferences:</strong> Some prioritise revenue maximisation, others favour quick booking</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Learning from real booking data</h2>
+                        <p class="mb-4">The most valuable aspect of our AI system is its ability to learn from actual booking behaviour. Every search, enquiry, and completed booking teaches us about traveller preferences and price sensitivity.</p>
+                        <p class="mb-4">For example, we've observed that business travellers are less price-sensitive for Monday morning departures from London to European financial centres, but highly price-sensitive for Friday afternoon returns. Leisure travellers show opposite patterns, with higher flexibility around departure times but clear preference for weekend arrivals.</p>
+                        <p>This granular understanding of demand patterns allows us to suggest pricing that maximises the probability of booking while ensuring operators capture appropriate value.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Keeping operators in control</h2>
+                        <p class="mb-4">Our AI provides <em>suggestions</em>, not mandates. Operators retain full control over their pricing, terms, and availability. The system simply provides data-driven insights that many smaller operators lack the resources to generate independently.</p>
+                        
+                        <div class="bg-brand-charcoal/50 p-6 rounded-xl border border-gray-700">
+                            <h3 class="text-lg font-semibold text-brand-gold mb-3">What operators tell us:</h3>
+                            <blockquote class="text-gray-300 italic mb-4">
+                                "Before JetSet Dead Legs, I was guessing at empty leg pricing based on gut feel. The AI suggestions give me confidence that I'm in the right ballpark while still letting me adjust for my specific operational needs."
+                            </blockquote>
+                            <p class="text-sm text-gray-400">— Charter Pro operator, currently in private beta</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">The feedback loop</h2>
+                        <p class="mb-4">Every pricing decision creates data that improves future suggestions. When an empty leg books quickly, we learn that the price point was attractive. When it remains unsold despite high search volume, we adjust our algorithms accordingly.</p>
+                        <p class="mb-4">This feedback loop is particularly valuable during our private beta phase. With 15–18 operators and a target of 50+ monthly empty leg listings, we're gathering substantial data on pricing effectiveness across different routes, aircraft types, and seasonal patterns.</p>
+                        <p>Our goal is to reach a 15–20% fill rate on listed empty legs—significantly higher than the industry average of 5–10% through traditional channels.</p>
+                    </div>
+
+                    <div class="bg-brand-charcoal/50 p-8 rounded-xl border border-gray-700">
+                        <h2 class="text-2xl font-bold text-white mb-4">Why this matters for the industry</h2>
+                        <p class="mb-4">Better pricing isn't just about maximising revenue on individual flights. It's about making empty legs a more viable and predictable revenue stream for operators, which encourages more operators to participate in the marketplace.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">For operators:</h3>
+                                <ul class="list-disc pl-6 space-y-1 text-sm text-gray-300">
+                                    <li>Higher fill rates mean more consistent additional revenue</li>
+                                    <li>Data-driven pricing reduces the guesswork and opportunity cost</li>
+                                    <li>Learning algorithms improve suggestions over time</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-gold mb-2">For travellers:</h3>
+                                <ul class="list-disc pl-6 space-y-1 text-sm text-gray-300">
+                                    <li>More accurately priced empty legs mean better value discovery</li>
+                                    <li>Transparent, market-driven pricing vs arbitrary broker mark-ups</li>
+                                    <li>Increased supply as more operators find empty legs profitable</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-white mb-4">What we're building next</h2>
+                        <p class="mb-4">Our current pricing system is just the foundation. We're developing additional features like dynamic pricing based on demand signals, seasonal adjustment factors, and route-specific optimisation models.</p>
+                        <p class="mb-4">We're also exploring predictive analytics—using historical patterns to help operators anticipate which repositioning flights might have strong empty leg demand, allowing them to plan routes and schedules accordingly.</p>
+                        <p>The goal is to make empty leg revenue as predictable and optimisable as primary charter revenue, turning what was once waste into a meaningful component of operator yield.</p>
+                    </div>
+
+                    <div class="border-t border-gray-700 pt-6">
+                        <p class="text-sm text-gray-400">
+                            <strong>Building in public:</strong> This post is part of our commitment to transparency about how we're building JetSet Dead Legs. Follow our progress on the <a href="news.html" class="text-brand-gold hover:underline">News & Product Updates</a> page.
+                        </p>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-night border-t border-white/5 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform -rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                    <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+                </div>
+                <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-500">
+                    <a href="about.html" class="hover:text-brand-gold transition-colors">About</a>
+                    <a href="contact.html" class="hover:text-brand-gold transition-colors">Contact</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Terms</a>
+                </div>
+                <div class="text-gray-600 text-xs">
+                    &copy; 2026 JetSet Dead Legs. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
