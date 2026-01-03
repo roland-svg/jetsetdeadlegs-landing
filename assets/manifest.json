@@ -1,0 +1,21 @@
+{
+  "name": "JetSet Dead Legs",
+  "short_name": "JetSet Dead Legs",
+  "description": "The AI-powered platform for empty leg flights. Connecting travelers with operators for smarter private aviation.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "Pictures/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "Pictures/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
