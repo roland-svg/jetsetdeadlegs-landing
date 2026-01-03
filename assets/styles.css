@@ -40,6 +40,51 @@ body {
     animation: float 3s ease-in-out infinite;
 }
 
+/* Utility Classes for Performance (Replacing Inline Styles) */
+.bg-hero-home {
+    background-image: url('https://picsum.photos/seed/privatejet/1920/1080');
+}
+
+.bg-hero-news {
+    background-image: url('https://picsum.photos/seed/news/1920/1080');
+}
+
+.bg-hero-partner {
+    background-image: url('https://picsum.photos/seed/privatejet/1920/1080');
+}
+
+.bg-hero-action {
+    background-image: url('https://picsum.photos/seed/privatejet/1920/1080');
+}
+
+.bg-hero-empty {
+    background-image: url('https://picsum.photos/seed/emptyleg/1920/1080');
+}
+
+.bg-hero-pricing {
+    background-image: url('https://picsum.photos/seed/platform/1920/1080');
+}
+
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+.delay-500 {
+    animation-delay: 500ms;
+}
+
+.text-shadow-lg {
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+}
+
+.text-shadow-md {
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+
 /* JetSet Tower Widget Styles */
 #jetset-tower-container {
     position: fixed;
