@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="See JetSet Dead Legs in action - Luxury private travel at a fraction of the cost." />
+    <title>See It In Action - JetSet Dead Legs</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#D4AF37',
+              'brand-charcoal': '#1F2937',
+              'brand-night': '#111827',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-brand-night text-white">
+    
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-night/30 backdrop-blur-sm border-b border-white/5">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform group-hover:rotate-12 transition-transform">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+                <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Home</a>
+                <a href="how-it-works.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">How It Works</a>
+                <a href="for-travelers.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Travelers</a>
+                <a href="for-operators.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Operators</a>
+                <a href="about.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">About</a>
+                <a href="contact.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="hidden sm:inline-block bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-xs uppercase tracking-widest">
+                    Launch App
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-charcoal border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-gray-300 hover:text-brand-gold transition-colors">How It Works</a>
+                <a href="for-travelers.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Travelers</a>
+                <a href="for-operators.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="about.html" class="text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-center">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Video -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden pt-20">
+        <div 
+            class="absolute inset-0 h-full bg-cover bg-center" 
+            style="background-image: url('https://picsum.photos/seed/privatejet/1920/1080');">
+        </div>
+        <!-- Single unified overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-night/0 via-brand-night/60 to-brand-night backdrop-blur-[1px]"></div>
+
+        <div class="relative z-10 w-full max-w-5xl mx-auto">
+            <!-- Back Button -->
+            <div class="mb-8 animate-fade-in-up">
+                <a href="index.html" class="inline-flex items-center text-brand-gold hover:text-yellow-500 transition-colors duration-300 font-bold uppercase tracking-widest text-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+            
+            <!-- Title -->
+            <div class="text-center mb-12 animate-fade-in-up" style="animation-delay: 100ms;">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
+                    See It <span class="text-brand-gold">In Action</span>
+                </h1>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Experience the future of private aviation. Watch how easy it is to find and book luxury dead leg flights.
+                </p>
+            </div>
+            
+            <!-- Video Player -->
+            <div class="animate-fade-in-up" style="animation-delay: 300ms;">
+                <div class="bg-brand-charcoal rounded-2xl shadow-2xl overflow-hidden border border-white/10 ring-1 ring-brand-gold/20">
+                    <video 
+                        controls 
+                        class="w-full aspect-video object-cover"
+                        preload="metadata"
+                        poster="https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&q=80&w=1920"
+                    >
+                        <source src="assets/videos/Operator promo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="text-center mt-12 animate-fade-in-up" style="animation-delay: 500ms;">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://jetset-dead-legs-sz74.vercel.app" class="inline-block bg-brand-gold text-brand-night font-bold text-lg rounded-lg px-10 py-4 hover:bg-yellow-500 transition-all duration-300 shadow-lg shadow-brand-gold/20 transform hover:scale-105">
+                        Launch App & Create Route Alert
+                    </a>
+                    <a href="how-it-works.html" class="inline-block bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-lg px-10 py-4 hover:bg-white/20 transition-all duration-300 border-2 border-white/30">
+                        How It Works
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-night border-t border-white/5 py-16 px-4 relative z-10">
+        <div class="container mx-auto max-w-6xl text-center">
+            <div class="mb-12 flex justify-center gap-8 text-xs font-bold uppercase tracking-[0.2em] flex-wrap">
+                <a href="about.html" class="text-gray-400 hover:text-brand-gold transition-colors">Safety</a>
+                <a href="for-operators.html" class="text-gray-400 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="partner-with-us.html" class="text-gray-400 hover:text-brand-gold transition-colors">Partner With Us</a>
+                <a href="see-it-in-action.html" class="text-gray-400 hover:text-brand-gold transition-colors">See It In Action</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/privacy.html" class="text-gray-400 hover:text-brand-gold transition-colors">Privacy</a>
+                <a href="for-travelers.html" class="text-gray-400 hover:text-brand-gold transition-colors">Traveller Terms</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/terms-operators.html" class="text-gray-400 hover:text-brand-gold transition-colors">Operator Terms</a>
+                <a href="contact.html" class="text-gray-400 hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+
+            <div class="flex flex-col items-center gap-6 mb-10">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 text-brand-gold">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                    <span class="text-xl font-bold text-white tracking-tight">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+                </div>
+                <p class="max-w-4xl mx-auto text-gray-500 leading-relaxed text-xs">
+                    © 2026 JetSet Dead Legs. All rights reserved.
+                    JetSet Dead Legs is a technology platform and not a direct air carrier or charter broker.
+                    All flights are operated by licensed air carriers holding valid regulatory authority.
+                </p>
+            </div>
+
+            <div class="text-[10px] text-gray-700 font-mono opacity-50 uppercase tracking-tighter">
+                BUILD v1.2.4 // SYSTEM: OPERATIONAL
+            </div>
+        </div>
+    </footer>
+
+    <!-- JetSet Tower Widget Integration -->
+    <script src="assets/jetset-tower-widget.js"></script>
+    <script>
+        // Initialize the Tower Widget
+        if (window.JetSetTowerWidget) {
+            window.JetSetTowerWidget.init({
+                screenContext: 'Action',
+                userType: 'visitor',
+                apiEndpoint: 'https://jetset-dead-legs-sz74.vercel.app/api/tower'
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

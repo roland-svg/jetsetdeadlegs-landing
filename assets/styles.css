@@ -1,0 +1,167 @@
+/* JetSet Dead Legs Marketing Site Styles */
+
+:root {
+    --brand-gold: #D4AF37;
+    --brand-charcoal: #1F2937;
+    --brand-night: #111827;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--brand-night);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brand-charcoal);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-gold);
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* JetSet Tower Widget Styles */
+#jetset-tower-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: inherit;
+}
+
+.tower-button {
+    background-color: var(--brand-gold);
+    color: var(--brand-night);
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.tower-button:hover {
+    transform: scale(1.1);
+    background-color: #e5c158;
+}
+
+.tower-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background-color: var(--brand-charcoal);
+    border: 1px border-gray-700;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.tower-window.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.tower-header {
+    background-color: var(--brand-night);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #374151;
+}
+
+.tower-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    background-color: #374151;
+    color: white;
+    border-bottom-left-radius: 2px;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: var(--brand-gold);
+    color: var(--brand-night);
+    border-bottom-right-radius: 2px;
+    font-weight: 500;
+}
+
+.tower-input-area {
+    padding: 16px;
+    background-color: var(--brand-night);
+    border-top: 1px solid #374151;
+    display: flex;
+    gap: 8px;
+}
+
+.tower-input {
+    flex: 1;
+    background-color: #374151;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: white;
+    font-size: 14px;
+}
+
+.tower-input:focus {
+    outline: 1px solid var(--brand-gold);
+}
+
+.tower-send {
+    background-color: var(--brand-gold);
+    color: var(--brand-night);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: bold;
+}

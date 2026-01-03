@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JetSet Dead Legs - Connecting savvy travelers with private aircraft charter operators for luxury travel at a fraction of the cost." />
+    <title>JetSet Dead Legs - The Smart Way to Fly Private</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#D4AF37',
+              'brand-charcoal': '#1F2937',
+              'brand-night': '#111827',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-brand-night text-white">
+    
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-night/30 backdrop-blur-sm border-b border-white/5">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform group-hover:rotate-12 transition-transform">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+                <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold transition-all">Home</a>
+                <a href="how-it-works.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">How It Works</a>
+                <a href="for-travelers.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Travelers</a>
+                <a href="for-operators.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Operators</a>
+                <a href="about.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">About</a>
+                <a href="contact.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="hidden sm:inline-block bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-xs uppercase tracking-widest">
+                    Launch App
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-charcoal border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-gray-300 hover:text-brand-gold transition-colors">How It Works</a>
+                <a href="for-travelers.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Travelers</a>
+                <a href="for-operators.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="about.html" class="text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-center">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div 
+            class="absolute inset-0 h-full bg-cover bg-center" 
+            style="background-image: url('https://picsum.photos/seed/privatejet/1920/1080');">
+        </div>
+        <!-- Single unified overlay: Brighter top (0% opacity), fully opaque bottom, minimal blur -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-night/0 via-brand-night/60 to-brand-night backdrop-blur-[1px]"></div>
+
+        <div class="relative z-10">
+            <header class="mb-8 animate-fade-in-up" style="animation-delay: 100ms;">
+                <div class="flex flex-col items-center gap-4 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-16 w-16 md:h-24 md:w-24 text-brand-gold drop-shadow-xl">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                    <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight text-white drop-shadow-2xl" style="text-shadow: 2px 2px 12px rgba(0,0,0,0.8)">
+                        JetSet <span class="text-brand-gold">Dead Legs</span>
+                    </h1>
+                </div>
+                <p class="text-xl md:text-2xl text-white font-medium drop-shadow-md opacity-90 mt-2" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.8)">
+                    The Smart Way to Fly Private.
+                </p>
+            </header>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 300ms;">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="inline-block bg-brand-gold text-brand-night font-bold text-lg rounded-lg px-10 py-4 hover:bg-yellow-500 transition-all duration-300 shadow-lg shadow-brand-gold/20 transform hover:scale-105">
+                    Launch App & Find Flights
+                </a>
+                <a href="how-it-works.html" class="inline-block bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-lg px-10 py-4 hover:bg-white/20 transition-all duration-300 border-2 border-white/30">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="mt-16 flex flex-wrap justify-center gap-8 text-sm text-gray-300 animate-fade-in" style="animation-delay: 500ms;">
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-brand-gold">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                    </svg>
+                    <span>Verified Operators</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-brand-gold">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                    <span>Secure Booking</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-brand-gold">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    <span>Instant Availability</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Are Dead Legs Section -->
+    <section class="bg-brand-night py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Fly Private, Pay Less. It's That Simple.</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    An "empty leg" or "dead leg" is a one-way private jet flight that would otherwise have no passengers. We give you access to these flights, offering an unparalleled luxury experience for a fraction of the typical charter price.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mt-16">
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 bg-brand-gold/10 border border-brand-gold/20 rounded-xl flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-7 w-7 text-brand-gold">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581a1.125 1.125 0 0 0 1.591 0l4.318-4.318a1.125 1.125 0 0 0 0-1.591L9.581 3.659a2.25 2.25 0 0 0-1.591-.659ZM6 7.5a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Save Up to 75%</h3>
+                            <p class="text-gray-400 text-lg">Fly private at a fraction of the typical charter cost. These flights would happen anyway—why not take advantage?</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 bg-brand-gold/10 border border-brand-gold/20 rounded-xl flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-7 w-7 text-brand-gold">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Same Luxury Experience</h3>
+                            <p class="text-gray-400 text-lg">Get the full private jet experience—comfort, privacy, and convenience—without the premium price tag.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 bg-brand-gold/10 border border-brand-gold/20 rounded-xl flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-7 w-7 text-brand-gold">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Access Global Routes</h3>
+                            <p class="text-gray-400 text-lg">From London to Dubai, LA to Tokyo—find empty legs on popular routes worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="aspect-video bg-brand-charcoal rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1583792498874-75c8f62cddc6?w=800&q=80" alt="Private Jet Interior" class="w-full h-full object-cover opacity-80" />
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-brand-gold text-brand-night font-bold text-xl px-8 py-4 rounded-xl shadow-2xl transform rotate-3">
+                        Save 50-75%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="bg-brand-charcoal py-24 px-4">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">How It Works</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Finding and booking your perfect empty leg flight is simple and straightforward.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <!-- Step 1 -->
+                <div class="animate-fade-in-up" style="animation-delay: 100ms;">
+                    <div class="flex items-center justify-center h-24 w-24 bg-brand-night border-2 border-brand-gold/30 rounded-full mx-auto mb-6 shadow-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">1. Search Your Route</h3>
+                    <p class="text-gray-400 leading-relaxed">Enter your desired origin and destination to instantly see available empty leg flights.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="animate-fade-in-up" style="animation-delay: 300ms;">
+                    <div class="flex items-center justify-center h-24 w-24 bg-brand-night border-2 border-brand-gold/30 rounded-full mx-auto mb-6 shadow-xl">
+                       <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-12v.75m0 3v.75m0 3v.75m0 3V18m-3-12h18M3 12h18m-3 6h-12c-.621 0-1.125-.504-1.125-1.125V6.125c0-.621.504-1.125 1.125-1.125h12.75c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125Z" />
+                       </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">2. View Details & Book</h3>
+                    <p class="text-gray-400 leading-relaxed">Explore aircraft details, pricing, and availability. Contact the operator directly to book or make an offer.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="animate-fade-in-up" style="animation-delay: 500ms;">
+                    <div class="flex items-center justify-center h-24 w-24 bg-brand-night border-2 border-brand-gold/30 rounded-full mx-auto mb-6 shadow-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.125A59.769 59.769 0 0121.485 12 59.768 59.768 0 013.27 20.875L5.999 12zm0 0h7.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">3. Enjoy Your Flight</h3>
+                    <p class="text-gray-400 leading-relaxed">Experience the luxury, comfort, and convenience of private jet travel at an unbeatable price.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="how-it-works.html" class="inline-block text-brand-gold font-bold text-lg hover:text-yellow-500 transition-colors">
+                    View Detailed Process →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Travelers & Operators -->
+    <section class="bg-gradient-to-b from-brand-charcoal to-brand-night py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- For Travelers -->
+                <div class="bg-brand-night/50 backdrop-blur-sm rounded-xl p-10 border border-gray-800 hover:border-brand-gold/30 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-16 w-16 text-brand-gold mb-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                    </svg>
+                    <h3 class="text-3xl font-bold text-white mb-4">For Travelers</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Access exclusive empty leg flights at unbeatable prices. Experience private aviation's comfort, speed, and convenience without breaking the bank.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold flex-shrink-0 mt-0.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <span>Save 50-75% on private charter costs</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold flex-shrink-0 mt-0.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <span>Access to verified operators worldwide</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold flex-shrink-0 mt-0.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <span>Real-time availability and instant booking</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold flex-shrink-0 mt-0.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <span>No membership fees or hidden costs</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="for-travelers.html" class="inline-block bg-brand-gold text-brand-night font-bold px-8 py-3 rounded-lg hover:bg-yellow-500 transition-all duration-300">
+                            Learn More
+                        </a>
+                        <a href="see-it-in-action.html" class="inline-block bg-white/10 backdrop-blur-sm text-white font-bold px-8 py-3 rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/20">
+                            Watch Video
+                        </a>
+                    </div>
+                </div>
+
+                <!-- For Operators -->
+                <div class="bg-brand-night/50 backdrop-blur-sm rounded-xl p-10 border border-gray-800 hover:border-brand-gold/30 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-16 w-16 text-brand-gold mb-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75v.75h-.75v-.75Zm0 3h.75v.75h-.75v-.75Zm0 3h.75v.75h-.75v-.75Zm0 3h.75v.75h-.75v-.75Zm0 3h.75v.75h-.75v-.75M1.5 21h21M12 3v18m0-18h6.75a2.25 2.25 0 0 1 2.25 2.25V6" />
+                    </svg>
+                    <h3 class="text-3xl font-bold text-white mb-4">For Operators</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Turn empty repositioning flights into revenue. Connect with qualified travelers actively searching for your routes.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold flex-shrink-0 mt-0.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <span>Monetize otherwise empty flights</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold flex-shrink-0 mt-0.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <span>Reach premium global audience</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold flex-shrink-0 mt-0.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <span>Simple listing management dashboard</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold flex-shrink-0 mt-0.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                            <span>Full control over pricing and terms</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="for-operators.html" class="inline-block bg-white text-brand-night font-bold px-8 py-3 rounded-lg hover:bg-gray-200 transition-all duration-300">
+                            Join as Operator
+                        </a>
+                        <a href="partner-with-us.html" class="inline-block bg-white/10 backdrop-blur-sm text-white font-bold px-8 py-3 rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/20">
+                            Watch Video
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-brand-gold py-20 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-brand-night mb-6">Ready to Fly Smarter?</h2>
+            <p class="text-xl text-brand-charcoal mb-10 leading-relaxed">
+                Join thousands of savvy travelers discovering luxury private aviation at unprecedented prices.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="inline-block bg-brand-night text-white font-bold text-lg rounded-lg px-10 py-4 hover:bg-brand-charcoal transition-all duration-300 shadow-xl">
+                    Start Searching Flights
+                </a>
+                <a href="contact.html" class="inline-block bg-white text-brand-night font-bold text-lg rounded-lg px-10 py-4 hover:bg-gray-100 transition-all duration-300 shadow-xl">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-night border-t border-white/5 py-16 px-4 relative z-10">
+        <div class="container mx-auto max-w-6xl text-center">
+            <div class="mb-12 flex justify-center gap-8 text-xs font-bold uppercase tracking-[0.2em] flex-wrap">
+                <a href="about.html" class="text-gray-400 hover:text-brand-gold transition-colors">Safety</a>
+                <a href="for-operators.html" class="text-gray-400 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="partner-with-us.html" class="text-gray-400 hover:text-brand-gold transition-colors">Partner With Us</a>
+                <a href="see-it-in-action.html" class="text-gray-400 hover:text-brand-gold transition-colors">See It In Action</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/privacy.html" class="text-gray-400 hover:text-brand-gold transition-colors">Privacy</a>
+                <a href="for-travelers.html" class="text-gray-400 hover:text-brand-gold transition-colors">Traveller Terms</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/terms-operators.html" class="text-gray-400 hover:text-brand-gold transition-colors">Operator Terms</a>
+                <a href="contact.html" class="text-gray-400 hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+
+            <div class="flex flex-col items-center gap-6 mb-10">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 text-brand-gold">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                    <span class="text-xl font-bold text-white tracking-tight">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+                </div>
+                <p class="max-w-4xl mx-auto text-gray-500 leading-relaxed text-xs">
+                    © 2026 JetSet Dead Legs. All rights reserved.
+                    JetSet Dead Legs is a technology platform and not a direct air carrier or charter broker.
+                    All flights are operated by licensed air carriers holding valid regulatory authority.
+                </p>
+            </div>
+
+            <div class="text-[10px] text-gray-700 font-mono opacity-50 uppercase tracking-tighter">
+                BUILD v1.2.4 // SYSTEM: OPERATIONAL
+            </div>
+        </div>
+    </footer>
+
+    <!-- JetSet Tower Widget Integration -->
+    <script src="assets/jetset-tower-widget.js"></script>
+    <script>
+        // Initialize the Tower Widget for marketing site
+        if (window.JetSetTowerWidget) {
+            window.JetSetTowerWidget.init({
+                screenContext: 'Marketing',
+                userType: 'visitor',
+                apiEndpoint: 'https://jetset-dead-legs-sz74.vercel.app/api/tower'
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

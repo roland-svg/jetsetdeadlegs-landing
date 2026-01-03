@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn how JetSet Dead Legs works - from finding empty leg flights to booking your luxury private jet experience." />
+    <title>How It Works - JetSet Dead Legs</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#D4AF37',
+              'brand-charcoal': '#1F2937',
+              'brand-night': '#111827',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-brand-night text-white">
+    
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-night/30 backdrop-blur-sm border-b border-white/5">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform group-hover:rotate-12 transition-transform">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+                <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Home</a>
+                <a href="how-it-works.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold transition-all">How It Works</a>
+                <a href="for-travelers.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Travelers</a>
+                <a href="for-operators.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Operators</a>
+                <a href="about.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">About</a>
+                <a href="contact.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="hidden sm:inline-block bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-xs uppercase tracking-widest">
+                    Launch App
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-charcoal border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-brand-gold">How It Works</a>
+                <a href="for-travelers.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Travelers</a>
+                <a href="for-operators.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="about.html" class="text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-center">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div 
+            class="absolute inset-0 h-full bg-cover bg-center" 
+            style="background-image: url('https://picsum.photos/seed/privatejet/1920/1080');">
+        </div>
+        <!-- Single unified overlay: Brighter top (0% opacity), fully opaque bottom, minimal blur -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-night/0 via-brand-night/60 to-brand-night backdrop-blur-[1px]"></div>
+
+        <div class="relative z-10 max-w-5xl">
+            <header class="mb-8 animate-fade-in-up" style="animation-delay: 100ms;">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6" style="text-shadow: 2px 2px 12px rgba(0,0,0,0.8)">
+                    How It <span class="text-brand-gold">Works</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white font-medium drop-shadow-md opacity-90 max-w-3xl mx-auto leading-relaxed" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.8)">
+                    The simplest way to discover and book private aviation empty legs.
+                </p>
+            </header>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="pb-20 px-4">
+        <div class="w-full max-w-4xl mx-auto">
+            <!-- Section 1: What JetSet Dead Legs is (and isn't) -->
+            <section class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm mt-12">
+                <h2 class="text-3xl font-bold text-white mb-6">What JetSet Dead Legs is (and isn't)</h2>
+                
+                <div class="space-y-6 text-gray-300">
+                    <div>
+                        <h3 class="font-semibold text-white mb-3">JetSet Dead Legs is:</h3>
+                        <ul class="space-y-2 ml-6 list-disc">
+                            <li>A digital marketplace and search tool for empty legs and private charter opportunities.</li>
+                            <li>A way to discover flights from AOC‑verified operators across the UK and Europe.</li>
+                            <li>A secure layer for inquiries, bookings, and payments.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-white mb-3">JetSet Dead Legs is not:</h3>
+                        <ul class="space-y-2 ml-6 list-disc">
+                            <li>An aircraft operator.</li>
+                            <li>A licensed charter broker.</li>
+                            <li>Responsible for operating or maintaining aircraft, or for flight safety.</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        All flights are operated by independent, AOC‑certified operators. They control the aircraft, crew, and day‑of‑flight decisions.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2: Step 1 — Search and explore routes -->
+            <section class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm">
+                <h2 class="text-3xl font-bold text-white mb-6">Step 1 — Search and explore routes</h2>
+                
+                <p class="text-gray-300 mb-6">
+                    You can start in two ways:
+                </p>
+
+                <div class="space-y-6 text-gray-300">
+                    <div>
+                        <h3 class="font-semibold text-white mb-3">Search directly</h3>
+                        <p>
+                            Enter your departure, destination, and dates on the main search screen to see current opportunities.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-white mb-3">Explore routes</h3>
+                        <p class="mb-3">
+                            Use the Explore routes section to browse popular corridors such as:
+                        </p>
+                        <ul class="space-y-2 ml-6 list-disc">
+                            <li>London ⇄ Ibiza, Palma, Olbia</li>
+                            <li>London ⇄ Geneva and other Alpine gateways</li>
+                            <li>Other high‑signal empty‑leg routes across the UK and Europe</li>
+                        </ul>
+                        <p class="mt-3">
+                            Each route page explains why empty legs appear there, what to expect, and how to set up alerts.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Step 2 — View flight details -->
+            <section class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm">
+                <h2 class="text-3xl font-bold text-white mb-6">Step 2 — View flight details</h2>
+                
+                <p class="text-gray-300 mb-6">
+                    When you see a suitable opportunity, you can review:
+                </p>
+
+                <div class="space-y-6 text-gray-300">
+                    <div>
+                        <h3 class="font-semibold text-white mb-3">Route and timing</h3>
+                        <ul class="space-y-1 ml-6 list-disc">
+                            <li>Departure and arrival airports</li>
+                            <li>Date and planned time window</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-white mb-3">Aircraft</h3>
+                        <ul class="space-y-1 ml-6 list-disc">
+                            <li>Aircraft type and typical cabin layout</li>
+                            <li>Approximate passenger capacity</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-white mb-3">Operator information</h3>
+                        <ul class="space-y-1 ml-6 list-disc">
+                            <li>Confirmation that the operator holds a valid Air Operator Certificate (AOC)</li>
+                            <li>Basic profile details where available</li>
+                        </ul>
+                    </div>
+
+                    <p class="pt-3">
+                        Empty legs usually have less flexibility than a fully bespoke charter: the aircraft is already moving for another mission, so you are taking advantage of that existing repositioning flight.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 4: Step 3 — Inquire, confirm, and pay securely -->
+            <section class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm">
+                <h2 class="text-3xl font-bold text-white mb-6">Step 3 — Inquire, confirm, and pay securely</h2>
+                
+                <div class="space-y-8 text-gray-300">
+                    <!-- Step 1 -->
+                    <div class="border-l-4 border-brand-gold pl-6">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-brand-gold text-brand-night w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                            <h3 class="text-lg font-semibold text-white">Send an inquiry or booking request</h3>
+                        </div>
+                        <p>
+                            Share who is travelling, your preferred timing within the offered window, and any key requirements.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="border-l-4 border-brand-gold pl-6">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-brand-gold text-brand-night w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                            <h3 class="text-lg font-semibold text-white">Operator confirmation</h3>
+                        </div>
+                        <p>
+                            The operator reviews your request and confirms availability, final timing, and price.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="border-l-4 border-brand-gold pl-6">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="bg-brand-gold text-brand-night w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                            <h3 class="text-lg font-semibold text-white">Secure payment via Stripe</h3>
+                        </div>
+                        <div>
+                            <p class="mb-2">
+                                Once confirmed, you pay through our Stripe‑powered checkout.
+                            </p>
+                            <p>
+                                Funds are held and released to the operator after the flight, minus platform fees.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-gray-300 pt-6">
+                    You never pay the operator directly via ad‑hoc bank transfers for flights booked through JetSet Dead Legs. Everything runs through one secure flow.
+                </p>
+            </section>
+
+            <!-- Section 5: Safety and verification -->
+            <section class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm">
+                <h2 class="text-3xl font-bold text-white mb-6">Safety and verification</h2>
+                
+                <p class="text-gray-300 mb-6">
+                    Safety starts with the operator, not the software. On JetSet Dead Legs:
+                </p>
+                <ul class="space-y-3 ml-6 list-disc text-gray-300">
+                    <li>Every flight is operated by an AOC-certified charter operator.</li>
+                    <li>We verify operator credentials before they can list flights.</li>
+                    <li>Payments are handled securely via Stripe.</li>
+                </ul>
+                <p class="text-gray-300 mt-6">
+                    For more details, visit our <a href="about.html" class="text-brand-gold hover:underline">Safety & AOC-verified operators</a> page.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="bg-brand-night border-t border-white/5 py-16 px-4 relative z-10">
+        <div class="container mx-auto max-w-6xl text-center">
+            <div class="mb-12 flex justify-center gap-8 text-xs font-bold uppercase tracking-[0.2em] flex-wrap">
+                <a href="about.html" class="text-gray-400 hover:text-brand-gold transition-colors">Safety</a>
+                <a href="for-operators.html" class="text-gray-400 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="partner-with-us.html" class="text-gray-400 hover:text-brand-gold transition-colors">Partner With Us</a>
+                <a href="see-it-in-action.html" class="text-gray-400 hover:text-brand-gold transition-colors">See It In Action</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/privacy.html" class="text-gray-400 hover:text-brand-gold transition-colors">Privacy</a>
+                <a href="for-travelers.html" class="text-gray-400 hover:text-brand-gold transition-colors">Traveller Terms</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/terms-operators.html" class="text-gray-400 hover:text-brand-gold transition-colors">Operator Terms</a>
+                <a href="contact.html" class="text-gray-400 hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+
+            <div class="flex flex-col items-center gap-6 mb-10">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 text-brand-gold">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                    <span class="text-xl font-bold text-white tracking-tight">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+                </div>
+                <p class="max-w-4xl mx-auto text-gray-500 leading-relaxed text-xs">
+                    © 2026 JetSet Dead Legs. All rights reserved.
+                    JetSet Dead Legs is a technology platform and not a direct air carrier or charter broker.
+                    All flights are operated by licensed air carriers holding valid regulatory authority.
+                </p>
+            </div>
+
+            <div class="text-[10px] text-gray-700 font-mono opacity-50 uppercase tracking-tighter">
+                BUILD v1.2.4 // SYSTEM: OPERATIONAL
+            </div>
+        </div>
+    </footer>
+
+    <!-- JetSet Tower Widget Integration -->
+    <script src="assets/jetset-tower-widget.js"></script>
+    <script>
+        // Initialize the Tower Widget
+        if (window.JetSetTowerWidget) {
+            window.JetSetTowerWidget.init({
+                screenContext: 'HowItWorks',
+                userType: 'visitor',
+                apiEndpoint: 'https://jetset-dead-legs-sz74.vercel.app/api/tower'
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
