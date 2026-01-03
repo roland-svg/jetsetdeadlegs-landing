@@ -339,8 +339,8 @@ Make it clear that:
                     },
                     body: JSON.stringify({
                         systemPrompt: JETSET_TOWER_SYSTEM_PROMPT,
-                        userType: this.config.userType === 'visitor' ? 'traveller' : this.config.userType,
-                        screenContext: this.config.screenContext,
+                        userType: 'traveller',
+                        screenContext: 'Marketing',
                         message: message,
                         runtimeContext: {
                             isFirstMessage: this.state.isFirstMessage
