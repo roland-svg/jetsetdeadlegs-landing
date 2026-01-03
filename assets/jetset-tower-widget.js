@@ -133,18 +133,40 @@
         },
 
         callTowerAPI: async function(message) {
-            // Mocking the API call for the marketing site
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
-                        resolve("Dead legs typically cost 50% to 75% less than a standard private charter. You can find current pricing by launching our app!");
-                    } else if (message.toLowerCase().includes('how') && message.toLowerCase().includes('work')) {
-                        resolve("We connect you directly with operators who have empty repositioning flights. You search, book, and fly private for a fraction of the cost.");
-                    } else {
-                        resolve("That's a great question! Our platform is designed to make private travel accessible. Would you like me to show you how to get started?");
-                    }
-                }, 1000);
-            });
+            try {
+                const response = await fetch(this.config.apiEndpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: message,
+                        context: this.config.screenContext,
+                        userType: this.config.userType
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('API response not ok');
+                }
+
+                const data = await response.json();
+                return data.response || data.message || "I received your message but couldn't process a response.";
+            } catch (error) {
+                console.error('Tower API Error:', error);
+                // Fallback to mock responses if API fails
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        if (message.toLowerCase().includes('price') || message.toLowerCase().includes('cost')) {
+                            resolve("Dead legs typically cost 50% to 75% less than a standard private charter. You can find current pricing by launching our app!");
+                        } else if (message.toLowerCase().includes('how') && message.toLowerCase().includes('work')) {
+                            resolve("We connect you directly with operators who have empty repositioning flights. You search, book, and fly private for a fraction of the cost.");
+                        } else {
+                            resolve("That's a great question! Our platform is designed to make private travel accessible. Would you like me to show you how to get started?");
+                        }
+                    }, 1000);
+                });
+            }
         }
     };
 
