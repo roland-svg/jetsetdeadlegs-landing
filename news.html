@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JetSet Dead Legs News - Stay updated with the latest announcements, partnerships, and press releases." />
+    <title>News - JetSet Dead Legs</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#D4AF37',
+              'brand-charcoal': '#1F2937',
+              'brand-night': '#111827',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-brand-night text-white">
+    
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-night/30 backdrop-blur-sm border-b border-white/5">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform -rotate-90 group-hover:rotate-12 transition-transform">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+                <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Home</a>
+                <a href="how-it-works.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">How It Works</a>
+                <a href="for-travelers.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Travelers</a>
+                <a href="for-operators.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Operators</a>
+                <a href="blog.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Blog</a>
+                <a href="news.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold transition-all">News</a>
+                <a href="about.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">About</a>
+                <a href="contact.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="hidden sm:inline-block bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-xs uppercase tracking-widest">
+                    Launch App
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-charcoal border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-gray-300 hover:text-brand-gold transition-colors">How It Works</a>
+                <a href="for-travelers.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Travelers</a>
+                <a href="for-operators.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="blog.html" class="text-gray-300 hover:text-brand-gold transition-colors">Blog</a>
+                <a href="news.html" class="text-brand-gold">News</a>
+                <a href="about.html" class="text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-center">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[40vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div 
+            class="absolute inset-0 h-full bg-cover bg-center" 
+            style="background-image: url('https://picsum.photos/seed/news/1920/1080');">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-night/0 via-brand-night/60 to-brand-night backdrop-blur-[1px]"></div>
+
+        <div class="relative z-10 max-w-5xl">
+            <header class="mb-8 animate-fade-in-up" style="animation-delay: 100ms;">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6" style="text-shadow: 2px 2px 12px rgba(0,0,0,0.8)">
+                    Latest <span class="text-brand-gold">News</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white font-medium drop-shadow-md opacity-90 max-w-3xl mx-auto leading-relaxed" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.8)">
+                    Stay updated with the latest announcements, partnerships, and press releases from JetSet Dead Legs.
+                </p>
+            </header>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-20 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="space-y-12">
+                <!-- News Item 1 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start border-b border-gray-800 pb-12">
+                    <div class="w-full md:w-1/3 shrink-0">
+                        <img src="https://picsum.photos/seed/news1/600/400" alt="News 1" class="rounded-lg w-full h-48 object-cover">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Announcement</span>
+                            <span class="text-xs text-gray-400">January 3, 2026</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white mb-4 hover:text-brand-gold transition-colors cursor-pointer">JetSet Dead Legs Expands to European Markets</h2>
+                        <p class="text-gray-400 mb-6">We are thrilled to announce our expansion into major European hubs, connecting more travelers with luxury dead leg opportunities across the continent.</p>
+                        <a href="#" class="text-brand-gold font-bold text-sm uppercase tracking-widest hover:underline">Read Press Release →</a>
+                    </div>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start border-b border-gray-800 pb-12">
+                    <div class="w-full md:w-1/3 shrink-0">
+                        <img src="https://picsum.photos/seed/news2/600/400" alt="News 2" class="rounded-lg w-full h-48 object-cover">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Partnership</span>
+                            <span class="text-xs text-gray-400">December 20, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white mb-4 hover:text-brand-gold transition-colors cursor-pointer">New Strategic Partnership with Global Charter Alliance</h2>
+                        <p class="text-gray-400 mb-6">Our new partnership with GCA will bring over 500 additional aircraft onto our platform, providing even more options for our savvy travelers.</p>
+                        <a href="#" class="text-brand-gold font-bold text-sm uppercase tracking-widest hover:underline">Read Press Release →</a>
+                    </div>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start border-b border-gray-800 pb-12">
+                    <div class="w-full md:w-1/3 shrink-0">
+                        <img src="https://picsum.photos/seed/news3/600/400" alt="News 3" class="rounded-lg w-full h-48 object-cover">
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Product Update</span>
+                            <span class="text-xs text-gray-400">December 10, 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white mb-4 hover:text-brand-gold transition-colors cursor-pointer">Introducing Real-Time Flight Tracking for All Bookings</h2>
+                        <p class="text-gray-400 mb-6">We've launched a new feature that allows travelers to track their dead leg flights in real-time through our mobile app.</p>
+                        <a href="#" class="text-brand-gold font-bold text-sm uppercase tracking-widest hover:underline">Read Press Release →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-night border-t border-white/5 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform -rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                    <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+                </div>
+                <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-500">
+                    <a href="about.html" class="hover:text-brand-gold transition-colors">About</a>
+                    <a href="contact.html" class="hover:text-brand-gold transition-colors">Contact</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Terms</a>
+                </div>
+                <div class="text-gray-600 text-xs">
+                    &copy; 2026 JetSet Dead Legs. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
