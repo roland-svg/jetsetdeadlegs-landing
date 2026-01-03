@@ -27,6 +27,7 @@
     <meta name="theme-color" content="#D4AF37" />
     <link rel="preconnect" href="https://cdn.tailwindcss.com" />
     <link rel="preconnect" href="https://picsum.photos" />
+    <link rel="preload" as="image" href="https://picsum.photos/seed/privatejet/1920/1080" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -437,16 +438,18 @@
     </footer>
 
     <!-- JetSet Tower Widget Integration -->
-    <script src="assets/jetset-tower-widget.js"></script>
+    <script src="assets/jetset-tower-widget.js" defer></script>
     <script>
         // Initialize the Tower Widget for marketing site
-        if (window.JetSetTowerWidget) {
-            window.JetSetTowerWidget.init({
-                screenContext: 'Marketing',
-                userType: 'visitor',
-                apiEndpoint: 'https://jetset-dead-legs-sz74.vercel.app/api/jetset-tower'
-            });
-        }
+        window.addEventListener('load', function() {
+            if (window.JetSetTowerWidget) {
+                window.JetSetTowerWidget.init({
+                    screenContext: 'Marketing',
+                    userType: 'visitor',
+                    apiEndpoint: 'https://jetset-dead-legs-sz74.vercel.app/api/jetset-tower'
+                });
+            }
+        });
 
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
