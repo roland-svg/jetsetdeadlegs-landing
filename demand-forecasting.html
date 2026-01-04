@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="See demand before it hits - JetSet Dead Legs' real-time demand forecasting helps operators position aircraft and maximize revenue with route-level predictions." />
+    <title>Demand Forecasting - JetSet Dead Legs</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/Pictures/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/Pictures/icon-512x512.png" />
+    <link rel="apple-touch-icon" href="assets/Pictures/icon-192x192.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-gold': '#D4AF37',
+              'brand-charcoal': '#1F2937',
+              'brand-night': '#111827',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-brand-night text-white">
+    
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-night/30 backdrop-blur-sm border-b border-white/5">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-brand-gold transform -rotate-90 group-hover:rotate-12 transition-transform">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+                <span class="text-xl font-bold tracking-tight text-white">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Home</a>
+                <a href="how-it-works.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">How It Works</a>
+                <a href="for-travelers.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">For Travelers</a>
+                <a href="for-operators.html" class="text-xs font-bold uppercase tracking-widest text-brand-gold transition-all">For Operators</a>
+                <a href="blog.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Blog</a>
+                <a href="news.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">News</a>
+                <a href="about.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">About</a>
+                <a href="contact.html" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-all">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="hidden sm:inline-block bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-xs uppercase tracking-widest">
+                    Launch App
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-charcoal border-t border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
+                <a href="index.html" class="text-gray-300 hover:text-brand-gold transition-colors">Home</a>
+                <a href="how-it-works.html" class="text-gray-300 hover:text-brand-gold transition-colors">How It Works</a>
+                <a href="for-travelers.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Travelers</a>
+                <a href="for-operators.html" class="text-gray-300 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="blog.html" class="text-gray-300 hover:text-brand-gold transition-colors">Blog</a>
+                <a href="news.html" class="text-gray-300 hover:text-brand-gold transition-colors">News</a>
+                <a href="about.html" class="text-gray-300 hover:text-brand-gold transition-colors">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-brand-gold transition-colors">Contact</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app" class="bg-brand-gold text-brand-night font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-center">
+                    Launch App
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <section class="pt-20 pb-4 px-4 border-b border-white/10">
+        <div class="container mx-auto max-w-4xl">
+            <nav class="text-sm text-gray-400">
+                <a href="for-operators.html" class="hover:text-brand-gold transition-colors">For Operators</a>
+                <span class="mx-2">→</span>
+                <span class="text-white">Demand Forecasting</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div 
+            class="absolute inset-0 h-full bg-cover bg-center" 
+            style="background-image: url('https://picsum.photos/seed/demandradar/1920/1080');">
+        </div>
+        <!-- Single unified overlay: Brighter top (0% opacity), fully opaque bottom, minimal blur -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-night/0 via-brand-night/60 to-brand-night backdrop-blur-[1px]"></div>
+
+        <div class="relative z-10 max-w-5xl">
+            <header class="mb-8 animate-fade-in-up" style="animation-delay: 100ms;">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6" style="text-shadow: 2px 2px 12px rgba(0,0,0,0.8)">
+                    Your Real-Time <span class="text-brand-gold">Demand Radar</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white font-medium drop-shadow-md opacity-90 max-w-3xl mx-auto leading-relaxed mb-8" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.8)">
+                    JetSet Dead Legs analyses live and historical searches to forecast route demand 2–4 hours ahead, with confidence scores and clear explanations.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="contact.html" class="bg-brand-gold text-brand-night font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-sm uppercase tracking-widest shadow-lg">
+                        Book a Walkthrough
+                    </a>
+                    <a href="#how-it-works" class="border border-brand-gold text-brand-gold font-bold px-8 py-4 rounded-lg hover:bg-brand-gold hover:text-brand-night transition-all duration-300 text-sm uppercase tracking-widest">
+                        See How It Works
+                    </a>
+                </div>
+            </header>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="pb-20 px-4">
+        <div class="w-full max-w-4xl mx-auto">
+            
+            <!-- Section 1: How the Demand Forecast tab works -->
+            <section id="how-it-works" class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm mt-12">
+                <h2 class="text-3xl font-bold text-white mb-6">How the 📊 Demand Forecast tab works</h2>
+                
+                <p class="text-gray-300 mb-8">
+                    This feature lives inside your operator CoPilot as a dedicated tab, giving you route-level predictions at a glance.
+                </p>
+
+                <h3 class="text-xl font-semibold text-white mb-4">Each route card shows:</h3>
+                
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <strong class="text-white">🔴🟠🟡🟢 Demand level indicator</strong>
+                            <span class="block text-gray-300 mt-1">Traffic-light style for at-a-glance risk and opportunity</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <strong class="text-white">Predicted demand % vs normal</strong>
+                            <span class="block text-gray-300 mt-1">For example, 185% of normal demand</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <strong class="text-white">Current searches</strong>
+                            <span class="block text-gray-300 mt-1">Live + recent historical interest volume</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <strong class="text-white">Peak hour</strong>
+                            <span class="block text-gray-300 mt-1">When demand is expected to spike</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <strong class="text-white">Confidence score</strong>
+                            <span class="block text-gray-300 mt-1">40–95% reliability indicator based on data volume</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <strong class="text-white">"Why?" explanation</strong>
+                            <span class="block text-gray-300 mt-1">Peak hour (15:00), Weekend surge, Holiday uplift, or Route-specific trend</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <strong class="text-white">💡 Marketing Tip</strong>
+                            <span class="block text-gray-300 mt-1">"Run retargeting 1–2 hours before peak" or "Feature this route in today's email"</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-semibold text-white mb-4">Summary stats block:</h3>
+                
+                <ul class="space-y-3 ml-6 list-disc text-gray-300">
+                    <li>Total routes analysed</li>
+                    <li>Average demand multiplier</li>
+                    <li>Average confidence level</li>
+                    <li>Number of high-demand routes (1.5x+ predicted demand)</li>
+                </ul>
+            </section>
+
+            <!-- Section 2: Built for your marketing and revenue team -->
+            <section class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm">
+                <h2 class="text-3xl font-bold text-white mb-6">Built for your marketing and revenue team</h2>
+                
+                <p class="text-gray-300 mb-8">
+                    Focus budget on the routes that are about to get busy, not the ones that were busy last month.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <h3 class="font-semibold text-white mb-2">Spot high-demand routes and turn them into targeted campaigns</h3>
+                            <p class="text-gray-300">Identify which routes are about to spike and create focused marketing pushes around them.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <h3 class="font-semibold text-white mb-2">Time promotions around predicted peak demand windows</h3>
+                            <p class="text-gray-300">Run promotions when travellers are actively searching, not during generic "weekend sales."</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <h3 class="font-semibold text-white mb-2">Validate campaign performance against demand predictions</h3>
+                            <p class="text-gray-300">See if your marketing efforts are driving results or if external demand factors are at play.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <h3 class="font-semibold text-white mb-2">Focus budget on routes with the highest predicted demand</h3>
+                            <p class="text-gray-300">Allocate marketing spend where it will have the most impact, based on real-time forecasts.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <div>
+                            <h3 class="font-semibold text-white mb-2">Plan seasonal campaigns using real uplift data</h3>
+                            <p class="text-gray-300">Use Christmas, summer, and other holiday uplift patterns to inform your long-term strategy.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Live example -->
+            <section class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm">
+                <h2 class="text-3xl font-bold text-white mb-6">Live example: London → New York</h2>
+                
+                <!-- Mock UI Card -->
+                <div class="bg-brand-night/50 border border-gray-600 rounded-lg p-6 mb-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold text-white">🟢 London → New York</h3>
+                        <span class="text-2xl font-bold text-brand-gold">185%</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 text-sm">
+                        <div>
+                            <span class="text-gray-400 block">Peak</span>
+                            <span class="text-white font-semibold">Friday 15:00</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block">Current</span>
+                            <span class="text-white font-semibold">42 searches</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block">Confidence</span>
+                            <span class="text-white font-semibold">87%</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 block">vs Normal</span>
+                            <span class="text-brand-gold font-semibold">185%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t border-gray-600 pt-4 mb-4">
+                        <p class="text-gray-300 text-sm mb-2">
+                            <strong class="text-white">Why:</strong> "Peak hour (15:00) + strong Friday pattern"
+                        </p>
+                    </div>
+                    
+                    <div class="bg-brand-gold/10 border border-brand-gold/30 rounded p-3">
+                        <p class="text-brand-gold text-sm">
+                            <strong>💡 Marketing Tip:</strong> High demand expected. Run targeted campaigns and highlight last seats for this window.
+                        </p>
+                    </div>
+                </div>
+                
+                <p class="text-gray-300">
+                    This lets you position aircraft, publish empty legs, and adjust pricing before demand peaks—giving you a competitive advantage over reactive operators.
+                </p>
+            </section>
+
+            <!-- Section 4: Under the hood -->
+            <section class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm">
+                <h2 class="text-3xl font-bold text-white mb-6">Under the hood (kept simple)</h2>
+                
+                <p class="text-gray-300 mb-6">
+                    The prediction engine runs every 5 minutes in production, analysing search history to detect:
+                </p>
+                
+                <ul class="space-y-3 ml-6 list-disc text-gray-300 mb-6">
+                    <li>Rush hours (for example, 9–10 AM, 3–5 PM)</li>
+                    <li>Weekday vs weekend patterns</li>
+                    <li>Holiday boosts (Christmas, summer peaks)</li>
+                </ul>
+
+                <p class="text-gray-300 mb-6">
+                    It assigns a confidence score (40–95%) based on data volume. Every prediction is logged into our internal analytics so we can A/B test, validate accuracy, and improve over time.
+                </p>
+
+                <p class="text-gray-300">
+                    This isn't experimental—it's robust, tested, and already live in production.
+                </p>
+            </section>
+
+            <!-- Section 5: Why this matters for operators -->
+            <section class="mb-16 bg-brand-charcoal/50 p-8 rounded-lg border border-gray-700 backdrop-blur-sm">
+                <h2 class="text-3xl font-bold text-white mb-6">Why this matters for operators</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <p class="text-gray-300">
+                            <strong class="text-white">Better aircraft positioning and leg planning.</strong> Know where to position your fleet before demand spikes.
+                        </p>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <p class="text-gray-300">
+                            <strong class="text-white">More relevant legs and offers in front of travellers.</strong> Present the right inventory when people are actively searching.
+                        </p>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <p class="text-gray-300">
+                            <strong class="text-white">Higher utilisation on key routes and peak periods.</strong> Capture demand when it's hottest, not after it's cooled.
+                        </p>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <p class="text-gray-300">
+                            <strong class="text-white">Move from reactive to proactive route planning.</strong> Base decisions on future demand, not yesterday's data.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Proof that it's real and live -->
+            <section class="mb-16 bg-brand-charcoal/30 border border-brand-gold/30 p-8 rounded-lg">
+                <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    Live today, not just a concept
+                </h2>
+                
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <span>The prediction engine is live in production on Vercel</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <span>Predictions refresh every 5 minutes</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="flex-shrink-0 w-2 h-2 bg-brand-gold rounded-full mt-2"></span>
+                        <span>Powers the 📊 Demand Forecast tab and real-time analytics in our internal tools</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Section 7: Call to Action -->
+            <section class="text-center bg-gradient-to-r from-brand-charcoal to-brand-night p-12 rounded-lg border border-brand-gold/20">
+                <h2 class="text-3xl font-bold text-white mb-4">
+                    See which of your routes are about to spike in demand before your competitors do
+                </h2>
+                
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Join the private beta and start making data-driven decisions about aircraft positioning, marketing campaigns, and pricing.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="contact.html" class="bg-brand-gold text-brand-night font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-all duration-300 text-sm uppercase tracking-widest shadow-lg">
+                        Book a Private Beta Walkthrough
+                    </a>
+                    <a href="for-operators.html" class="text-brand-gold hover:text-yellow-300 underline text-sm uppercase tracking-widest">
+                        Back to For Operators Overview
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-night border-t border-white/5 py-16 px-4 relative z-10">
+        <div class="container mx-auto max-w-6xl text-center">
+            <div class="mb-12 flex justify-center gap-8 text-xs font-bold uppercase tracking-[0.2em] flex-wrap">
+                <a href="about.html" class="text-gray-400 hover:text-brand-gold transition-colors">About</a>
+                <a href="for-operators.html" class="text-gray-400 hover:text-brand-gold transition-colors">For Operators</a>
+                <a href="partner-with-us.html" class="text-gray-400 hover:text-brand-gold transition-colors">Partner With Us</a>
+                <a href="see-it-in-action.html" class="text-gray-400 hover:text-brand-gold transition-colors">See It In Action</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/safety" class="text-gray-400 hover:text-brand-gold transition-colors">Safety</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/privacy" class="text-gray-400 hover:text-brand-gold transition-colors">Privacy</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/billing" class="text-gray-400 hover:text-brand-gold transition-colors">Billing</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/terms-travelers" class="text-gray-400 hover:text-brand-gold transition-colors">Traveller Terms</a>
+                <a href="https://jetset-dead-legs-sz74.vercel.app/terms-operators" class="text-gray-400 hover:text-brand-gold transition-colors">Operator Terms</a>
+                <a href="contact.html" class="text-gray-400 hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+
+            <div class="flex flex-col items-center gap-6 mb-10">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 text-brand-gold transform -rotate-90">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                    </svg>
+                    <span class="text-xl font-bold text-white tracking-tight">JetSet <span class="text-brand-gold">Dead Legs</span></span>
+                </div>
+                <p class="max-w-4xl mx-auto text-gray-500 leading-relaxed text-xs">
+                    © 2026 JetSet Dead Legs. All rights reserved.
+                    JetSet Dead Legs is a technology platform and not a direct air carrier or charter broker.
+                    All flights are operated by licensed air carriers holding valid regulatory authority.
+                </p>
+            </div>
+
+            <div class="text-[10px] text-gray-700 font-mono opacity-50 uppercase tracking-tighter">
+                BUILD v1.2.4 // SYSTEM: OPERATIONAL
+            </div>
+        </div>
+    </footer>
+
+    <!-- JetSet Tower Widget Integration -->
+    <script src="assets/jetset-tower-widget.js"></script>
+    <script>
+        // Initialize the Tower Widget
+        if (window.JetSetTowerWidget) {
+            window.JetSetTowerWidget.init({
+                screenContext: 'Operators-DemandForecasting',
+                userType: 'visitor',
+                apiEndpoint: 'https://jetset-dead-legs-sz74.vercel.app/api/jetset-tower'
+            });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
