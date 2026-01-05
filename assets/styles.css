@@ -41,28 +41,13 @@ body {
 }
 
 /* Utility Classes for Performance (Replacing Inline Styles) */
-.bg-hero-home {
-    background-image: url('https://picsum.photos/seed/privatejet/1920/1080');
-}
-
-.bg-hero-news {
-    background-image: url('https://picsum.photos/seed/news/1920/1080');
-}
-
-.bg-hero-partner {
-    background-image: url('https://picsum.photos/seed/privatejet/1920/1080');
-}
-
-.bg-hero-action {
-    background-image: url('https://picsum.photos/seed/privatejet/1920/1080');
-}
-
-.bg-hero-empty {
-    background-image: url('https://picsum.photos/seed/emptyleg/1920/1080');
-}
-
+.bg-hero-home,
+.bg-hero-news,
+.bg-hero-partner,
+.bg-hero-action,
+.bg-hero-empty,
 .bg-hero-pricing {
-    background-image: url('https://picsum.photos/seed/platform/1920/1080');
+    background-image: url('https://picsum.photos/seed/privatejet/1920/1080');
 }
 
 .delay-100 {
