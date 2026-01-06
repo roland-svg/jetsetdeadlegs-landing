@@ -1,6 +1,8 @@
-# JetSet Dead Legs
+# JetSet Direct Link
 
-JetSet Dead Legs is a platform connecting savvy travelers with private aircraft charter operators for luxury travel at a fraction of the cost.
+The smart way to charter private jets, with smarter access to empty leg value.
+
+JetSet Direct Link is a platform connecting savvy travelers with private aircraft charter operators for luxury travel at a fraction of the cost.
 
 ## Core Features
 - **For Travelers**: Find and book "empty leg" flights (repositioning flights) at significantly reduced rates (often 50-75% off).

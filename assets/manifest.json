@@ -1,6 +1,6 @@
 {
-  "name": "JetSet Dead Legs",
-  "short_name": "JetSet Dead Legs",
+  "name": "JetSet Direct Link",
+  "short_name": "JetSet Direct Link",
   "description": "The AI-powered platform for empty leg flights. Connecting travelers with operators for smarter private aviation.",
   "start_url": "/",
   "display": "standalone",
