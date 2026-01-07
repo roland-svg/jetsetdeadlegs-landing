@@ -1,4 +1,4 @@
-/* JetSet Dead Legs Marketing Site Styles */
+/* JetSet Direct Link Marketing Site Styles - Aligned with App Design */
 
 :root {
     --brand-gold: #D4AF37;
@@ -9,6 +9,7 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     scroll-behavior: smooth;
+    background-color: var(--brand-night);
 }
 
 /* Custom Scrollbar */
@@ -47,7 +48,10 @@ body {
 .bg-hero-action,
 .bg-hero-empty,
 .bg-hero-pricing {
-    background-image: url('https://picsum.photos/seed/privatejet/1920/1080');
+    background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 .delay-100 {
@@ -62,12 +66,25 @@ body {
     animation-delay: 500ms;
 }
 
+/* Text shadows for dramatic effect - matching app design */
 .text-shadow-lg {
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
 }
 
 .text-shadow-md {
     text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+
+/* Gradient overlay effect - matching app's sophisticated layering */
+.gradient-overlay {
+    background: linear-gradient(to bottom, rgba(17, 24, 39, 0.1), rgba(17, 24, 39, 0.3), rgba(17, 24, 39, 0.9));
+    backdrop-filter: blur(0.5px);
+}
+
+/* App-style gradient for hero sections */
+.hero-gradient {
+    background: linear-gradient(to bottom, rgba(17, 24, 39, 0) 0%, rgba(17, 24, 39, 0.3) 50%, rgba(17, 24, 39, 1) 100%);
+    backdrop-filter: blur(0.5px);
 }
 
 /* JetSet Tower Widget Styles */
